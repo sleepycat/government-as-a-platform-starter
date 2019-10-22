@@ -2,7 +2,7 @@ import { i18n } from "@lingui/core"
 
 export const locales = {
   en: "English",
-  cs: "Česky"
+  fr: "Français"
 }
 
 export async function activate(locale) {
