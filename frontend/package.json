@@ -4,12 +4,12 @@
   "private": true,
   "dependencies": {
     "@lingui/react": "^3.0.0-7",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.7.0",
     "@lingui/cli": "^3.0.0-3",
     "@lingui/loader": "^3.0.0-3",
     "@lingui/macro": "^3.0.0-3",
@@ -27,7 +27,11 @@
     "extends": "react-app"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
