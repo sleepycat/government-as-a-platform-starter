@@ -6,6 +6,7 @@ This repo contains a clonable starter app that aims to be the techincal implemen
 
 Technically that works out something like this:
 
+<pre>
    +---------------+ +-----------------+ +---------------+ +-----------------+ +---------------+
    |  Gov web app  | |Internal corp app| |  Gov web app  | |3rd party IOS app| |  Gov web app  |
    +---------------+ +-----------------+ +------+--------+ +--------+--------+ +-------+-------+
@@ -18,6 +19,7 @@ Technically that works out something like this:
      +---------v---v-+ +------v------v-+ +------v---v----+ +--------v--v---+ +----v----v-----+
      |Gov service API| |Gov service API| |Gov service API| |Gov service API| |Gov service API|
      +---------------+ +---------------+ +---------------+ +---------------+ +---------------+
+</pre>
 
 Each service is built out as a API/consumer pair, dogfooding the API and shipping a useful service while contributing a new piece to the larger vision of a "mashable" ecosystem of Government APIs.
 
