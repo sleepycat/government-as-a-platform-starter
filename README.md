@@ -1,6 +1,32 @@
-# Cloud Native Starter
+# Government As A Platform Starter
 
-This repo contains a clonable stater app in the cloud native style.
+This repo contains a clonable starter app that aims to be the techincal implementation of Richard Popes definition of GaaP:
+
+>Government as a Platform is the approach of reorganizing the work of government around a network of shared APIs, open-standards and canonical datasets.
+
+Technically that works out something like this:
+
+   +---------------+ +-----------------+ +---------------+ +-----------------+ +---------------+
+   |  Gov web app  | |Internal corp app| |  Gov web app  | |3rd party IOS app| |  Gov web app  |
+   +---------------+ +-----------------+ +------+--------+ +--------+--------+ +-------+-------+
+               |              |                 |		                |                  |      
+               |              |                 |		+---------------+-------------+    |        
+               |              |                 |		|               |             |    |       
+               |   +----------+      +----------+		|               |  +---------------|      
+               |   |          |      |          |		|               |  |          |    |        
+               |   |          |      |          |		|               |  |          |    |      
+     +---------v---v-+ +------v------v-+ +------v---v----+ +--------v--v---+ +----v----v-----+
+     |Gov service API| |Gov service API| |Gov service API| |Gov service API| |Gov service API|
+     +---------------+ +---------------+ +---------------+ +---------------+ +---------------+
+
+Each service is built out as a API/consumer pair, dogfooding the API and shipping a useful service while contributing a new piece to the larger vision of a "mashable" ecosystem of Government APIs.
+
+This splitting of API/consumer or backend/frontend is important, as [Pia Andrews explains](https://www.themandarin.com.au/118672-government-as-a-platform-the-foundation-for-digital-government-and-gov-2-0/):
+
+>In splitting the front end from a consumable series of back end services, agencies gain the ability to more rapidly iterate the customer experience of the service, taking into account changing user needs and new user platforms (mobile is just the start — personal AI helpers, augmented reality and embedded computing are just around the corner). When the back end and front end of a service are part of the one monolithic codebase, it is simply too expensive, time-consuming, and complicated to make any changes to the service, let alone support continuous improvements or respond to changing user needs.
+
+This purpose here then is to do the hard work to make this pattern easy enough to be replicated across the government.
+
 
 ## local development
 
