@@ -6,6 +6,6 @@ module.exports = {
       include: ["src"]
     }
   ],
-  format: "minimal",
+  format: "po",
   sourceLocale: "en"
 }

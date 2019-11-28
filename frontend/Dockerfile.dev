@@ -4,14 +4,12 @@ LABEL maintainer="mike.williamson@cds-snc.ca"
 WORKDIR /app
 COPY . .
 
-RUN npm ci
-RUN npm run extract
-RUN npm run compile
+RUN npm install
 
-ENV NODE_ENV production
+ENV NODE_ENV development
 RUN npm run build
 
 USER node
 
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]

@@ -10,6 +10,8 @@ build:
       infer:
       - '**/*.js'
       - '**/*.css'
+    docker:
+      dockerfile: Dockerfile.dev
   - image: gaap-api
     context: api
     sync:
