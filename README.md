@@ -29,6 +29,21 @@ This splitting of API/consumer or backend/frontend is important, as [Pia Andrews
 
 This purpose here then is to do the hard work to make this pattern easy enough to be replicated across the government.
 
+## Project Structure
+
+The separation of frontend from the api is reflected in the folder structure:
+
+```sh
+.
+├── api
+├── frontend
+├── platform
+├── README.md
+└── skaffold.yaml
+```
+The `api` folder contains everything related to the API, the frontend contains everything for the `frontend` service and the `platform` folder will contain everything needed to create a full PBMM environment on the cloud provider of your choice and run those services within it.
+
+Further details can be found in the readmes contained in their respective folders.
 
 ## local development
 
