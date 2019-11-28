@@ -1,7 +1,7 @@
 require('dotenv-safe').config()
 const { Server } = require('./src/server')
 
-const { PORT = 8080 } = process.env
+const { PORT = 3000 } = process.env
 
 ;(async () => {
   const server = await Server()

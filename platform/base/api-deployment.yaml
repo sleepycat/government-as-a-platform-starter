@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gaap-frontend
+  name: gaap-api
 spec:
   selector:
     matchLabels:
-      app: gaap-frontend
+      app: gaap-api
   template:
     metadata:
       labels:
-        app: gaap-frontend
+        app: gaap-api
     spec:
       containers:
-      - name: gaap-frontend
-        image: gaap-frontend
+      - name: gaap-api
+        image: gaap-api
         ports:
         - containerPort: 3000

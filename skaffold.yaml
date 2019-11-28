@@ -1,11 +1,17 @@
-apiVersion: skaffold/v1beta17
+apiVersion: skaffold/v1
 kind: Config
 metadata:
   name: skaffold-create-react-app
 build:
   artifacts:
-  - image: skaffold-create-react-app
+  - image: gaap-frontend
     context: frontend
+    sync:
+      infer:
+      - '**/*.js'
+      - '**/*.css'
+  - image: gaap-api
+    context: api
     sync:
       infer:
       - '**/*.js'
@@ -14,6 +20,10 @@ deploy:
   kustomize:
     path: platform/overlays/minikube
 portForward:
-- resourceType: deployment
-  resourceName: create-react-app
+- resourceType: service
+  resourceName: gaap-frontend
   port: 3000
+- resourceType: service
+  resourceName: gaap-api
+  port: 3000
+  localPort: 3001
