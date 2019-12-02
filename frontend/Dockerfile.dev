@@ -7,9 +7,6 @@ COPY . .
 RUN npm install
 
 ENV NODE_ENV development
-RUN npm run build
-
-USER node
 
 EXPOSE 3000
 CMD ["npm", "run", "dev"]

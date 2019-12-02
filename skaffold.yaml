@@ -25,6 +25,7 @@ portForward:
 - resourceType: service
   resourceName: gaap-frontend
   port: 3000
+  localPort: 3000
 - resourceType: service
   resourceName: gaap-api
   port: 3000
