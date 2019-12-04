@@ -5,6 +5,7 @@ ENV NODE_ENV production
 
 WORKDIR /app
 COPY . .
+RUN npm ci
 
 USER node
 EXPOSE 3000

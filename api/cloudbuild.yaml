@@ -1,0 +1,23 @@
+steps:
+  - name: node:13-alpine
+    id: ci
+    dir: api
+    entrypoint: npm
+    args: ['ci']
+
+  - name: node:13-alpine
+    id: test
+    dir: api
+    entrypoint: npm
+    args: ['test']
+
+  - name: gcr.io/kaniko-project/executor
+    id: build
+    dir: api
+    args:
+      - --destination=gcr.io/$PROJECT_ID/api:$BRANCH_NAME-$SHORT_SHA
+      - --destination=gcr.io/$PROJECT_ID/api:latest
+      - --reproducible
+      - --context=/workspace/api
+      - --cache=true
+      - --cache-ttl=6h
