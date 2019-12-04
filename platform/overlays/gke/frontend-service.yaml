@@ -7,8 +7,8 @@ metadata:
   name: gaap-frontend
 spec:
   ports:
-  - name: 3000-3000
-    port: 3000
+  - name: 80-3000
+    port: 80
     protocol: TCP
     targetPort: 3000
   selector:
