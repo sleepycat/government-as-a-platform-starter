@@ -4,3 +4,11 @@ resources:
 - ../../base
 patchesStrategicMerge:
 - frontend-service.yaml
+images:
+- name: gaap-api
+  newName: gcr.io/government-as-a-platform/api
+  newTag: master-cda26a8
+- name: gaap-frontend
+  newName: gcr.io/government-as-a-platform/frontend
+  newTag: build-the-api-with-cloudbuild-8cdb2f8
+
