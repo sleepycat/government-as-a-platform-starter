@@ -13,6 +13,50 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/App.js:14
-msgid "Hello from React"
-msgstr "Hello from React"
+#: src/LandingPage.js:16
+msgid "\"Government as a Platform is the approach of reorganizing the work of government around a network of shared APIs, open-standards and canonical data registers. The hope is that this will allow public servants, businesses, and others to deliver radically better services to the public, and to do so safely, efficiently, democratically, and in a more accountable way.\" <0>-- Richard Pope</0>"
+msgstr "\"Government as a Platform is the approach of reorganizing the work of government around a network of shared APIs, open-standards and canonical data registers. The hope is that this will allow public servants, businesses, and others to deliver radically better services to the public, and to do so safely, efficiently, democratically, and in a more accountable way.\" <0>-- Richard Pope</0>"
+
+#: src/DataPage.js:22
+msgid "Data from the API"
+msgstr "Data from the API"
+
+#: src/LandingPage.js:11
+msgid "Government As A Platform Starter"
+msgstr "Government As A Platform Starter"
+
+#: src/App.js:39
+msgid "Home"
+msgstr "Home"
+
+#: src/PageNotFound.js:9
+msgid "Page not found"
+msgstr "Page not found"
+
+#: src/App.js:32
+msgid "Pre-Alpha"
+msgstr "Pre-Alpha"
+
+#: src/App.js:59
+msgid "Privacy"
+msgstr "Privacy"
+
+#: src/App.js:30
+msgid "Skip to main content"
+msgstr "Skip to main content"
+
+#: src/PageNotFound.js:12
+msgid "Sorry, the page you were trying to view does not exist."
+msgstr "Sorry, the page you were trying to view does not exist."
+
+#: src/App.js:69
+msgid "Terms & conditions"
+msgstr "Terms & conditions"
+
+#: src/DataPage.js:27
+msgid "The API says hello to the:"
+msgstr "The API says hello to the:"
+
+#: src/App.js:33
+msgid "This service is being developed in the open"
+msgstr "This service is being developed in the open"

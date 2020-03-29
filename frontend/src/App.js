@@ -1,45 +1,75 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core'
-import { i18n } from '@lingui/core'
-import { I18nProvider } from '@lingui/react'
-import { Trans, t } from '@lingui/macro'
-import { Header } from './Header'
+import React from 'react'
+import { Route } from 'react-router-dom'
+import { useLingui } from '@lingui/react'
+import { Global, css } from '@emotion/core'
+import { PageNotFound } from './PageNotFound'
+import { LandingPage } from './LandingPage'
+import { Main } from './Main'
+import { Trans } from '@lingui/macro'
+import { TopBanner } from './TopBanner'
+import { PhaseBanner } from './PhaseBanner'
 import { Footer } from './Footer'
-import canadaWordmark from './images/canada-wordmark.svg'
+import { Navigation } from './Navigation'
+import { Flex, Link, CSSReset } from '@chakra-ui/core'
+import { SkipLink } from './SkipLink'
 
-export const App = () => (
-  <I18nProvider i18n={i18n}>
-    <section
-      css={css`
-				font-family: sans;
-        max-width: 960px;
-        padding-left: 20px;
-        padding-right: 20px;
-        margin: 0px auto;
-      `}
-    >
-      <Header />
-      <main
-        css={css`
-          max-width: 960px;
-          margin: 0 auto;
-          padding-left: 20px;
-          padding-right: 20px;
-          padding: 0 20px;
-          padding-bottom: calc(80px + 60px);
-        `}
-      >
-        <Trans>Hello from React</Trans>
-      </main>
-    </section>
-    <Footer>
-      <img
-        css={css`
-          height: 25px;
-        `}
-        height="100%"
-        src={canadaWordmark}
-      />
-    </Footer>
-  </I18nProvider>
-)
+export default function App() {
+  const { i18n } = useLingui()
+
+  return (
+    <>
+      <Flex direction="column" minHeight="100vh" bg="gray.50">
+        <header>
+          <CSSReset />
+          <Global
+            styles={css`
+              @import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&display=swap');
+            `}
+          />
+          <SkipLink invisible href="#main">
+            <Trans>Skip to main content</Trans>
+          </SkipLink>
+          <PhaseBanner phase={<Trans>Pre-Alpha</Trans>}>
+            <Trans>This service is being developed in the open</Trans>
+          </PhaseBanner>
+          <TopBanner />
+        </header>
+        <Navigation>
+          <Link to="/">
+            <Trans>Home</Trans>
+          </Link>
+        </Navigation>
+        <Main>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
+
+          <Route>
+            <PageNotFound />
+          </Route>
+        </Main>
+        <Footer>
+          <Link
+            href={
+              i18n.locale === 'en'
+                ? 'https://www.canada.ca/en/transparency/privacy.html'
+                : 'https://www.canada.ca/fr/transparence/confidentialite.html'
+            }
+          >
+            <Trans>Privacy</Trans>
+          </Link>
+          <Link
+            ml={4}
+            href={
+              i18n.locale === 'en'
+                ? 'https://www.canada.ca/en/transparency/terms.html'
+                : 'https://www.canada.ca/fr/transparence/avis.html'
+            }
+          >
+            <Trans>Terms & conditions</Trans>
+          </Link>
+        </Footer>
+      </Flex>
+    </>
+  )
+}

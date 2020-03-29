@@ -1,11 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackRootPlugin = require('html-webpack-root-plugin')
-const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { getIfUtils, removeEmpty } = require('webpack-config-utils')
 
 module.exports = ({ mode }) => {
-  const { ifProduction, ifNotProduction } = getIfUtils(mode)
+  const {ifNotProduction } = getIfUtils(mode)
 
   return {
     mode,
@@ -21,7 +20,6 @@ module.exports = ({ mode }) => {
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin(),
       new HtmlWebpackRootPlugin(),
-      new HtmlWebpackInlineSVGPlugin(),
     ],
     devServer: {
       port: 3000,
