@@ -1,10 +1,10 @@
 import React from 'react'
+import { string } from 'prop-types'
 import { useLingui } from '@lingui/react'
 import { locales, activate } from './i18n.config'
 import { Box, PseudoBox, VisuallyHidden } from '@chakra-ui/core'
 
-const Toggler = props => {
-	const { locale } = props // eslint-disable-line
+const Toggler = ({ locale }) => {
   return (
     <PseudoBox
       as="button"
@@ -39,6 +39,10 @@ const Toggler = props => {
       </PseudoBox>
     </PseudoBox>
   )
+}
+
+Toggler.propTypes = {
+  locale: string.isRequired,
 }
 
 export function LocaleSwitcher() {
