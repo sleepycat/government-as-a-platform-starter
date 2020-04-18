@@ -1,11 +1,12 @@
 import React from 'react'
+import { t } from '@lingui/macro'
 import { LocaleSwitcher } from './LocaleSwitcher'
 import { useLingui } from '@lingui/react'
 import sigEn from './images/sig-blk-en.svg'
 import sigFr from './images/sig-blk-fr.svg'
 import { Flex, Box, Image } from '@chakra-ui/core'
 
-export const TopBanner = props => {
+export const TopBanner = (props) => {
   const { i18n } = useLingui()
 
   return (
@@ -22,7 +23,7 @@ export const TopBanner = props => {
         <Image
           src={i18n.locale === 'en' ? sigEn : sigFr}
           width="100%"
-          alt={i18n._('Symbol of the Government of Canada')}
+          alt={i18n._(t`Symbol of the Government of Canada`)}
         />
       </Box>
       <Box py={4} pl={4} ml="auto">
