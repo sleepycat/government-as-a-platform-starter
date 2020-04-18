@@ -1,10 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const HtmlWebpackRootPlugin = require('html-webpack-root-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { getIfUtils, removeEmpty } = require('webpack-config-utils')
 
 module.exports = ({ mode }) => {
-  const {ifNotProduction } = getIfUtils(mode)
+  const { ifNotProduction } = getIfUtils(mode)
 
   return {
     mode,
@@ -18,8 +17,7 @@ module.exports = ({ mode }) => {
     }),
     plugins: [
       new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin(),
-      new HtmlWebpackRootPlugin(),
+      new HtmlWebpackPlugin({ template: './src/template.js' }),
     ],
     devServer: {
       port: 3000,
