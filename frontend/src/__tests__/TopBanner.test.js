@@ -3,11 +3,9 @@ import { setupI18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
 import { ThemeProvider, theme } from '@chakra-ui/core'
 import { TopBanner } from '../TopBanner'
-import { render, cleanup } from '@testing-library/react'
+import { render } from '@testing-library/react'
 
 describe('<TopBanner />', () => {
-  afterEach(cleanup)
-
   it('renders using the language prop correctly', () => {
     const { getByRole } = render(
       <ThemeProvider theme={theme}>

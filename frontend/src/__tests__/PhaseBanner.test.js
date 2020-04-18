@@ -2,12 +2,10 @@ import React from 'react'
 import { setupI18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
 import { ThemeProvider, theme } from '@chakra-ui/core'
-import { render, cleanup } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { PhaseBanner } from '../PhaseBanner'
 
 describe('<PhaseBanner />', () => {
-  afterEach(cleanup)
-
   it('properly renders alpha banner', () => {
     const { getAllByText } = render(
       <ThemeProvider theme={theme}>
