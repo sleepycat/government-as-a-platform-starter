@@ -49,6 +49,11 @@ msgstr "Skip to main content"
 msgid "Sorry, the page you were trying to view does not exist."
 msgstr "Sorry, the page you were trying to view does not exist."
 
+#: src/Footer.js:24
+#: src/TopBanner.js:26
+msgid "Symbol of the Government of Canada"
+msgstr "Symbol of the Government of Canada"
+
 #: src/App.js:69
 msgid "Terms & conditions"
 msgstr "Terms & conditions"
