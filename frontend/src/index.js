@@ -2,7 +2,7 @@ import React from 'react'
 import { ThemeProvider } from '@chakra-ui/core'
 import { I18nProvider } from '@lingui/react'
 import { ApolloProvider } from '@apollo/react-hooks'
-import { i18n } from '@lingui/core'
+import { setupI18n } from '@lingui/core'
 import ReactDOM from 'react-dom'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
@@ -21,7 +21,7 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <ThemeProvider theme={canada}>
-      <I18nProvider i18n={i18n}>
+      <I18nProvider i18n={setupI18n()}>
         <Router>
           <App />
         </Router>
