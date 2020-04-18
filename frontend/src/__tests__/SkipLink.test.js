@@ -1,11 +1,9 @@
 import React from 'react'
-import { render, cleanup } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import { ThemeProvider, theme } from '@chakra-ui/core'
 import { SkipLink } from '../SkipLink'
 
 describe('SkipLinks', () => {
-  afterEach(cleanup)
-
   it('are visible by default', () => {
     const { getByText } = render(
       <ThemeProvider theme={theme}>
