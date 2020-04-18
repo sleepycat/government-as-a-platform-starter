@@ -31,6 +31,8 @@ module.exports = ({ mode }) => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
+              // cache transpilation results to speed up build
+              cacheDirectory: true,
             },
           },
         },
